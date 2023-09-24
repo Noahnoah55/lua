@@ -4,6 +4,10 @@
 ** See Copyright Notice in lua.h
 */
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
 #ifndef lualib_h
 #define lualib_h
@@ -49,4 +53,8 @@ LUAMOD_API int (luaopen_package) (lua_State *L);
 LUALIB_API void (luaL_openlibs) (lua_State *L);
 
 
+#endif
+
+#ifdef __cplusplus
+}
 #endif

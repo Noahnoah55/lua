@@ -188,23 +188,16 @@ LUALIB_API void (luaL_requiref) (lua_State *L, const char *modname,
 ** =======================================================
 */
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
-  struct luaL_Buffer
-  {
-    char *b;     /* buffer address */
-    size_t size; /* buffer size */
-    size_t n;    /* number of characters in buffer */
-    lua_State *L;
-    union
-    {
-      LUAI_MAXALIGN;           /* ensure maximum alignment for buffer */
-      char b[LUAL_BUFFERSIZE]; /* initial buffer */
-    } init;
-  };
+struct luaL_Buffer {
+  char *b;  /* buffer address */
+  size_t size;  /* buffer size */
+  size_t n;  /* number of characters in buffer */
+  lua_State *L;
+  union {
+    LUAI_MAXALIGN;  /* ensure maximum alignment for buffer */
+    char b[LUAL_BUFFERSIZE];  /* initial buffer */
+  } init;
+};
 
 
 #define luaL_bufflen(bf)	((bf)->n)
@@ -305,6 +298,4 @@ typedef struct luaL_Stream {
 
 #endif
 
-#ifdef __cplusplus
-}
-#endif
+

@@ -5,10 +5,6 @@
 ** See Copyright Notice at the end of this file
 */
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
 
 #ifndef lua_h
 #define lua_h
@@ -534,8 +530,4 @@ struct lua_Debug {
 ******************************************************************************/
 
 
-#endif
-
-#ifdef __cplusplus
-}
 #endif
